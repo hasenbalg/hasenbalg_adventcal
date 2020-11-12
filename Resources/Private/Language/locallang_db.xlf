@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-12T20:32:46Z" product-name="hasenbalg_adventcal">
+		<header/>
+		<body>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_door">
+				<source>Door</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.content_element">
+				<source>Content Element</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.name">
+				<source>Advent Calendar</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.description">
+				<source>Shows a 24 door advent calendar</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

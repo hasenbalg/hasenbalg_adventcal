@@ -1,0 +1,23 @@
+{
+    "name": "hasenbalgorg/hasenbalg-adventcal",
+    "type": "typo3-cms-extension",
+    "description": "Herzlichen Glueckwunsch zu Weihnachten Kai",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "HasenbalgOrg\\HasenbalgAdventcal\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HasenbalgOrg\\HasenbalgAdventcal\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "hasenbalg_adventcal": "self.version",
+        "typo3-ter/hasenbalg-adventcal": "self.version"
+    }
+}
