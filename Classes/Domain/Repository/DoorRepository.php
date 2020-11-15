@@ -23,4 +23,16 @@ class DoorRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     protected $defaultOrderings = [
         'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
     ];
+
+    /**
+     * Find entities by a given DateTime object
+     *
+     * @param \DateTime $date The DateTime to filter by
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findByDate(\DateTime $date)
+    {
+        $query = $this->createQuery();
+        return $query->matching($query->equals('date', $date))->execute();
+    }
 }

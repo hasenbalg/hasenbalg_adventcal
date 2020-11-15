@@ -29,3 +29,11 @@ foreach (['crdate', 'tstamp'] as $fakeField) {
         ];
     }
 }
+//flexform
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['hasenbalgadventcal_piadventcal'] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    // plugin signature: <extension key without underscores> '_' <plugin name in lowercase>
+    'hasenbalgadventcal_piadventcal',
+    // Flexform configuration schema file
+    'FILE:EXT:hasenbalg_adventcal/Configuration/FlexForms/Registration.xml'
+);

@@ -20,6 +20,8 @@
 		<table  class="tx_hasenbalgadventcal" >
 			<tr>
 				<th><f:translate key="tx_hasenbalgadventcal_domain_model_door.date" /></th>
+				<th><f:translate key="tx_hasenbalgadventcal_domain_model_door.posx" /></th>
+				<th><f:translate key="tx_hasenbalgadventcal_domain_model_door.posy" /></th>
 				<th> </th>
 				<th> </th>
 			</tr>
@@ -27,6 +29,8 @@
 			<f:for each="{doors}" as="door">
 				<tr>
 					<td><f:link.action action="show" arguments="{door : door}"> {door.date -> f:format.date()}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{door : door}"> {door.posx}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{door : door}"> {door.posy}</f:link.action></td>
 					<td><f:link.action action="edit" arguments="{door : door}">Edit</f:link.action></td>
 					<td><f:link.action action="delete" arguments="{door : door}">Delete</f:link.action></td>
 				</tr>

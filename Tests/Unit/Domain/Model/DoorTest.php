@@ -53,6 +53,60 @@ class DoorTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
+    public function getPosxReturnsInitialValueForFloat()
+    {
+        self::assertSame(
+            0.0,
+            $this->subject->getPosx()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setPosxForFloatSetsPosx()
+    {
+        $this->subject->setPosx(3.14159265);
+
+        self::assertAttributeEquals(
+            3.14159265,
+            'posx',
+            $this->subject,
+            '',
+            0.000000001
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getPosyReturnsInitialValueForFloat()
+    {
+        self::assertSame(
+            0.0,
+            $this->subject->getPosy()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setPosyForFloatSetsPosy()
+    {
+        $this->subject->setPosy(3.14159265);
+
+        self::assertAttributeEquals(
+            3.14159265,
+            'posy',
+            $this->subject,
+            '',
+            0.000000001
+        );
+    }
+
+    /**
+     * @test
+     */
     public function getContentElementReturnsInitialValueFor()
     {
     }

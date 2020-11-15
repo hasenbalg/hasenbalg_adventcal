@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-14T09:35:27Z" product-name="hasenbalg_adventcal">
+		<header/>
+		<body>
+			<trans-unit id="background.description">
+				<source>Background image</source>
+			</trans-unit>
+			<trans-unit id="doors.description">
+				<source>Doors</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

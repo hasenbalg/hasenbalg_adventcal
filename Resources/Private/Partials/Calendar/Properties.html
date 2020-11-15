@@ -1,0 +1,15 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="tx-hasenbalg-adventcal">
+	<f:debug>{_all}</f:debug>
+	<f:image image="{calendar.background}" />
+	<div class="overlay">
+		<f:for each="{calendar.doors}" as="door" iteration="i">
+			<f:comment>
+				there are 4 css color classes like color0 ... color3 
+			</f:comment>
+			<f:render partial="Door/Properties" arguments="{door:door, colorClass:'color{i.cycle%4}'}" />
+		</f:for>
+	</div>
+</div>
+
+</html>

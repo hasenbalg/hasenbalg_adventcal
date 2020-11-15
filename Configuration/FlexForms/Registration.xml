@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<T3DataStructure>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>Optionen</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+          <settings.calendar>
+            <TCEforms>
+              <label>LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalg_adventcal_piadventcal.which_calendar</label>
+                <config>
+                    <type>select</type>
+                    <items type="array">
+                        <numIndex index="0" type="array">
+                        <numIndex index="0">LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalg_adventcal_piadventcal.pick_a_calendar</numIndex>
+                        </numIndex>
+                    </items>
+                    <foreign_table>tx_hasenbalgadventcal_domain_model_calendar</foreign_table>
+                    <!-- todo limit cal choice to storage pid -->
+                </config>
+            </TCEforms>
+          </settings.calendar>   
+        </el>
+      </ROOT>
+    </sDEF>
+  </sheets>
+</T3DataStructure>

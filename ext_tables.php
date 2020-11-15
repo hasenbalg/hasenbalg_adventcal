@@ -11,10 +11,15 @@ call_user_func(
             'Advent Calendar'
         );
 
+       
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('hasenbalg_adventcal', 'Configuration/TypoScript', 'Advent Calendar');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_hasenbalgadventcal_domain_model_door', 'EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_csh_tx_hasenbalgadventcal_domain_model_door.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_hasenbalgadventcal_domain_model_door');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_hasenbalgadventcal_domain_model_calendar', 'EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_csh_tx_hasenbalgadventcal_domain_model_calendar.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_hasenbalgadventcal_domain_model_calendar');
 
     }
 );

@@ -1,4 +1,5 @@
 <?php
+
 namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
 
 /***
@@ -17,41 +18,87 @@ namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
  */
 class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+
+
     /**
-     * The day of the door.
+     * make bigger door
      *
-     * @var \DateTime
-     * @TYPO3\CMS\Extbase\Annotation\Validate("HasenbalgOrg\HasenbalgAdventcal\Domain\Validator\DateUniqueValidator")
+     * @var bool
+     */
+    protected $isbigger = false;
+
+    /**
+     * mumber day of the month
+     *
+     * @var int
      * @validate NotEmpty
      */
-    protected $date = null;
+    protected $daynum = null;
+
+    /**
+     * vertical position in %
+     *
+     * @var float
+     * @validate NotEmpty
+     */
+    protected $posx = 0.0;
+
+    /**
+     * horizontal position in %
+     *
+     * @var float
+     * @validate NotEmpty
+     */
+    protected $posy = 0.0;
 
     /**
      * @var \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
-    protected $contentElement;
+    protected $contentElement = null;
+
 
     /**
-     * Returns the date
+     * Returns the daynum
      *
-     * @return \DateTime $date
+     * @return int $daynum
      */
-    public function getDate()
+    public function getDaynum()
     {
-        return $this->date;
+        return $this->daynum;
     }
 
     /**
-     * Sets the date
+     * Sets the daynum
      *
-     * @param \DateTime $date
+     * @param int $daynum
      * @return void
      */
-    public function setDate(\DateTime $date)
+    public function setDaynum(int $daynum)
     {
-        $this->date = $date;
+        $this->daynum = $daynum;
+    }
+
+    /**
+     * Returns the isbigger
+     *
+     * @return bool $isbigger
+     */
+    public function getIsbigger()
+    {
+        return $this->isbigger;
+    }
+
+    /**
+     * Sets the isbigger
+     *
+     * @param bool $isbigger
+     * @return void
+     */
+    public function setisbigger(bool $isbigger)
+    {
+        $this->isbigger = $isbigger;
     }
 
     /**
@@ -73,5 +120,47 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setContentElement(\HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent $contentElement)
     {
         $this->contentElement = $contentElement;
+    }
+
+    /**
+     * Returns the posx
+     *
+     * @return float $posx
+     */
+    public function getPosx()
+    {
+        return $this->posx;
+    }
+
+    /**
+     * Sets the posx
+     *
+     * @param float $posx
+     * @return void
+     */
+    public function setPosx($posx)
+    {
+        $this->posx = $posx;
+    }
+
+    /**
+     * Returns the posy
+     *
+     * @return float $posy
+     */
+    public function getPosy()
+    {
+        return $this->posy;
+    }
+
+    /**
+     * Sets the posy
+     *
+     * @param float $posy
+     * @return void
+     */
+    public function setPosy($posy)
+    {
+        $this->posy = $posy;
     }
 }

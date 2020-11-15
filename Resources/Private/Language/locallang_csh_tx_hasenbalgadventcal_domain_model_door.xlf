@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-12T20:32:46Z" product-name="hasenbalg_adventcal">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-14T09:35:27Z" product-name="hasenbalg_adventcal">
 		<header/>
 		<body>
 			<trans-unit id="date.description">
 				<source>The day of the door.</source>
+			</trans-unit>
+			<trans-unit id="posx.description">
+				<source>vertical position in %</source>
+			</trans-unit>
+			<trans-unit id="posy.description">
+				<source>horizontal position in %</source>
 			</trans-unit>
 			<trans-unit id="content_element.description">
 				<source>contentElement</source>

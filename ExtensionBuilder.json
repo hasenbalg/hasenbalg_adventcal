@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    85,
-                    114
+                    614,
+                    93
                 ]
             },
             "name": "New Model Object",
@@ -38,12 +38,34 @@
                             "allowedFileTypes": "",
                             "maxItems": "1",
                             "propertyDescription": "The day of the door.",
-                            "propertyIsExcludeField": true,
+                            "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": true,
                             "propertyIsRequired": true,
                             "propertyName": "date",
                             "propertyType": "NativeDate",
                             "uid": "1393063108499"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "vertical position in %",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "posx",
+                            "propertyType": "Float",
+                            "uid": "1256249830960"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "horizontal position in %",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "posy",
+                            "propertyType": "Float",
+                            "uid": "934964407962"
                         }
                     ]
                 },
@@ -57,8 +79,72 @@
                             "relationName": "contentElement",
                             "relationType": "zeroToOne",
                             "relationWire": "",
-                            "renderType": "selectSingleBox",
+                            "renderType": "selectSingle",
                             "uid": "1293627246437"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    143,
+                    115
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Calendar",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Calendar",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "skipTypeConfiguration": false,
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "827930483439"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Background image",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "background",
+                            "propertyType": "Image",
+                            "uid": "1029640257528"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "Doors",
+                            "relationName": "doors",
+                            "relationType": "zeroToMany",
+                            "relationWire": "[wired]",
+                            "renderType": "inline",
+                            "uid": "852380757533"
                         }
                     ]
                 }
@@ -66,7 +152,18 @@
         }
     ],
     "properties": {
-        "backendModules": [],
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": ""
+                },
+                "description": "Manage the advent calendar",
+                "key": "modadventcal",
+                "mainModule": "web",
+                "name": "Advent Calendar",
+                "tabLabel": "Advent Cal"
+            }
+        ],
         "description": "Herzlichen Glueckwunsch zu Weihnachten Kai",
         "emConf": {
             "category": "plugin",
@@ -82,8 +179,8 @@
         },
         "extensionKey": "hasenbalg_adventcal",
         "name": "Advent Calendar",
-        "originalExtensionKey": "",
-        "originalVendorName": "",
+        "originalExtensionKey": "hasenbalg_adventcal",
+        "originalVendorName": "HasenbalgOrg",
         "persons": [
             {
                 "company": "hasenbalg.org",
@@ -106,9 +203,22 @@
         ],
         "vendorName": "HasenbalgOrg"
     },
-    "wires": [],
+    "wires": [
+        {
+            "src": {
+                "moduleId": 1,
+                "terminal": "relationWire_0",
+                "uid": "852380757533"
+            },
+            "tgt": {
+                "moduleId": 0,
+                "terminal": "SOURCES",
+                "uid": "1141425370833"
+            }
+        }
+    ],
     "log": {
-        "last_modified": "2020-11-12 08:32",
+        "last_modified": "2020-11-14 09:35",
         "extension_builder_version": "8.10.3",
         "be_user": " (1)"
     }

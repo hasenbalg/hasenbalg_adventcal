@@ -1,0 +1,88 @@
+.tx-hasenbalg-adventcal {
+    position: relative;
+}
+
+.tx-hasenbalg-adventcal img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.tx-hasenbalg-adventcal .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+}
+
+.tx-hasenbalg-adventcal .overlay .door {
+    position: relative;
+    width: max-content;
+}
+
+.tx-hasenbalg-adventcal .overlay .big-door {
+    font-size: 200%;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .leaf {
+    padding: 1em;
+    display: inline;
+    background-color: rgb(255, 187, 0);
+    color: white;
+    cursor: pointer;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .ce {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .ce .frame {
+    padding: 1em;
+    background-color: white;
+    color: black;
+    /* position: absolute;
+    width: max-content; */
+    height: auto;
+    max-width: 500px;
+    margin: 10% auto;
+    position: relative;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .ce-open {
+    position: fixed;
+    outline: 2px dashed #f00 !important;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-out;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .leaf.color0 {
+    background-color: white;
+    color: #4f5fce;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .leaf.color1 {
+    background-color: #4f5fce;
+    color: white;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .leaf.color2 {
+    background-color: #fbcd13;
+    color: white;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .leaf.color3 {
+    background-color: #ff527d;
+    color: white;
+}
