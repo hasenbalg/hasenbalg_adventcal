@@ -1,4 +1,5 @@
 <?php
+
 namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
 
 /***
@@ -17,6 +18,15 @@ namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
  */
 class Calendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+
+
+    /**
+     * title
+     *
+     * @validate NotEmpty
+     */
+    protected $title = null;
+
     /**
      * Background image
      *
@@ -75,6 +85,27 @@ class Calendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setBackground(\TYPO3\CMS\Extbase\Domain\Model\FileReference $background)
     {
         $this->background = $background;
+    }
+
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function gettitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     * @return void
+     */
+    public function settitle(string $title)
+    {
+        $this->title = $title;
     }
 
     /**

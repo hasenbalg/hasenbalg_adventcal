@@ -5,49 +5,64 @@
 		<body>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door">
 				<source>Door</source>
+				<target>Türchen</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.date">
 				<source>Date</source>
+				<target>Datum</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.isbigger">
 				<source>Double size</source>
+				<target>Doppelte Grösse</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.isbigger.enabled">
 				<source>Make bigger</source>
+				<target>Grösser machen</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.posx">
 				<source>Posx</source>
+				<target>Relative horitontale Position</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.posy">
 				<source>Posy</source>
+				<target>Relative vertikale Position</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.content_element">
 				<source>Content Element</source>
+				<target>Inhaltselement</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar">
 				<source>Calendar</source>
+				<target>Adventskalender</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.background">
 				<source>Background</source>
+				<target>Hintergrundbild</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.doors">
 				<source>Doors</source>
+				<target>Türchen</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.name">
 				<source>Advent Calendar</source>
+				<target>Adventskalender</target>
 			</trans-unit>
 
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.which_calendar">
 				<source>Which calendar will be displayed?</source>
+				<target>Welcher Adventskalender soll angezeigt werden?</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.pick_a_calendar">
 				<source>Pick a calendar</source>
+				<target>Wähle einen aus! </target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.description">
 				<source>Shows a 24 door advent calendar</source>
+				<target>Zeigt 24 Türchen auf einem Hintergrundbild. Die Türchen haben Inhaltselemente, die angezeigt werden, wenn man drauf klickt.</target>
 			</trans-unit>
 			
 		</body>

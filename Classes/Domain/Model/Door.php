@@ -31,7 +31,7 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * mumber day of the month
      *
      * @var int
-     * @validate NotEmpty
+     * @validate NotEmpty, \HasenbalgOrg\HasenbalgAdventcal\Validation\Validator\DateUniqueValidator
      */
     protected $daynum = null;
 
@@ -55,6 +55,7 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     * @validate NotEmpty
      */
     protected $contentElement = null;
 

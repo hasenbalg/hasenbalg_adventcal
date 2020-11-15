@@ -138,7 +138,7 @@ return [
                     ['24', '24'],
                 ],
                 'size' => 1,
-                'eval' => 'required',
+                'eval' => 'required,unique',
                 'default' => null,
             ],
         ],
@@ -176,7 +176,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tt_content',
-                'minitems' => 0,
+                'minitems' => 1,
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -185,6 +185,7 @@ return [
                     'showPossibleLocalizationRecords' => 1,
                     'showAllLocalizationLink' => 1
                 ],
+                'eval' => 'required',
             ],
         ],
 

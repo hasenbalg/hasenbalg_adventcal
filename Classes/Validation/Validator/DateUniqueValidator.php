@@ -1,10 +1,10 @@
 <?php
 
-namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Validator;
+namespace HasenbalgOrg\HasenbalgAdventcal\Validation\Validator;
 
 use HasenbalgOrg\HasenbalgAdventcal\Domain\Repository\DoorRepository;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
-
+// @todo gets not called yet
 class DateUniqueValidator extends AbstractValidator
 {
     /**
@@ -23,13 +23,13 @@ class DateUniqueValidator extends AbstractValidator
     protected function isValid($value)
     {
         $this->doorRepository = $this->objectManager->get(DoorRepository::class);
-        echo 'huhu';
-        var_dump($this->doorRepository->findByDate($value));
-        die();
+       
 
-        if (!$this->doorRepository->findByDate($value)) {
-            return;
+        if (!$this->doorRepository->findByDaynum($value)) {
+            $this->addError('Date must be unique.', 12215639998798773);
+            return false;
         }
-        $this->addError('Date must be unique .', 12215639998798773);
+        return true;
+        
     }
 }
