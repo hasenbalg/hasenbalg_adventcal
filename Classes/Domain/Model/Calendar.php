@@ -1,5 +1,4 @@
 <?php
-
 namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
 
 /***
@@ -18,12 +17,11 @@ namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
  */
 class Calendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
-
     /**
      * title
      *
      * @validate NotEmpty
+     * @var string
      */
     protected $title = null;
 
@@ -67,9 +65,30 @@ class Calendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * Returns the title
+     *
+     * @return string title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     * @return void
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
      * Returns the background
      *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $background
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference background
      */
     public function getBackground()
     {
@@ -85,27 +104,6 @@ class Calendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setBackground(\TYPO3\CMS\Extbase\Domain\Model\FileReference $background)
     {
         $this->background = $background;
-    }
-
-    /**
-     * Returns the title
-     *
-     * @return string $title
-     */
-    public function gettitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Sets the title
-     *
-     * @param string $title
-     * @return void
-     */
-    public function settitle(string $title)
-    {
-        $this->title = $title;
     }
 
     /**
@@ -133,7 +131,7 @@ class Calendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the doors
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HasenbalgOrg\HasenbalgAdventcal\Domain\Model\Door> $doors
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\HasenbalgOrg\HasenbalgAdventcal\Domain\Model\Door> doors
      */
     public function getDoors()
     {

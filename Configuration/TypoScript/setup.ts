@@ -57,25 +57,29 @@ plugin.tx_hasenbalgadventcal._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
-
-# Module configuration
-module.tx_hasenbalgadventcal_web_hasenbalgadventcalmodadventcal {
-    persistence {
-        storagePid = {$module.tx_hasenbalgadventcal_modadventcal.persistence.storagePid}
-    }
-    view {
-        templateRootPaths.0 = EXT:{extension.extensionKey}/Resources/Private/Backend/Templates/
-        templateRootPaths.1 = {$module.tx_hasenbalgadventcal_modadventcal.view.templateRootPath}
-        partialRootPaths.0 = EXT:hasenbalg_adventcal/Resources/Private/Backend/Partials/
-        partialRootPaths.1 = {$module.tx_hasenbalgadventcal_modadventcal.view.partialRootPath}
-        layoutRootPaths.0 = EXT:hasenbalg_adventcal/Resources/Private/Backend/Layouts/
-        layoutRootPaths.1 = {$module.tx_hasenbalgadventcal_modadventcal.view.layoutRootPath}
-    }
-}
-
 //ttcontent mapping
 
 config.tx_extbase.persistence.classes.HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent.mapping.tableName = tt_content
 
 page.includeCSS.hasenbalg_adventcal = EXT:hasenbalg_adventcal/Resources/Public/Css/style.css
 page.includeJSFooter.hasenbalg_adventcal = EXT:hasenbalg_adventcal/Resources/Public/Js/main.js
+
+
+
+######################
+#### CTYPE: AUDIO ####
+######################
+
+#tt_content.audio >
+#tt_content.audio =< lib.contentElement
+#tt_content.audio {
+#
+#    templateName = Audio
+#    templateRootPaths.0 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements/
+#    dataProcessing {
+#        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+#        10 {
+#            references.fieldName = assets
+#        }
+#    }
+#}

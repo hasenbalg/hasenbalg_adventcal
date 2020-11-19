@@ -30,30 +30,6 @@ class DoorControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function listActionFetchesAllDoorsFromRepositoryAndAssignsThemToView()
-    {
-
-        $allDoors = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $doorRepository = $this->getMockBuilder(\HasenbalgOrg\HasenbalgAdventcal\Domain\Repository\DoorRepository::class)
-            ->setMethods(['findAll'])
-            ->disableOriginalConstructor()
-            ->getMock();
-        $doorRepository->expects(self::once())->method('findAll')->will(self::returnValue($allDoors));
-        $this->inject($this->subject, 'doorRepository', $doorRepository);
-
-        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
-        $view->expects(self::once())->method('assign')->with('doors', $allDoors);
-        $this->inject($this->subject, 'view', $view);
-
-        $this->subject->listAction();
-    }
-
-    /**
-     * @test
-     */
     public function showActionAssignsTheGivenDoorToView()
     {
         $door = new \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\Door();

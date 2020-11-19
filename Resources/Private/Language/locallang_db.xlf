@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-14T09:35:27Z" product-name="hasenbalg_adventcal">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-15T17:52:03Z" product-name="hasenbalg_adventcal">
 		<header/>
 		<body>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door">
 				<source>Door</source>
 			</trans-unit>
-			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.date">
-				<source>Date</source>
-			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.isbigger">
-				<source>Double size</source>
+				<source>Isbigger</source>
 			</trans-unit>
-			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.isbigger.enabled">
-				<source>Make bigger</source>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.daynum">
+				<source>Daynum</source>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.posx">
 				<source>Posx</source>
@@ -27,11 +24,11 @@
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar">
 				<source>Calendar</source>
 			</trans-unit>
-			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.background">
-				<source>Background</source>
-			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.title">
 				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.background">
+				<source>Background</source>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.doors">
 				<source>Doors</source>
@@ -39,17 +36,15 @@
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.name">
 				<source>Advent Calendar</source>
 			</trans-unit>
-
-			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.which_calendar">
-				<source>Which calendar will be displayed?</source>
-			</trans-unit>
-			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.pick_a_calendar">
-				<source>Pick a calendar</source>
-			</trans-unit>
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.description">
 				<source>Shows a 24 door advent calendar</source>
 			</trans-unit>
-			
+			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive">
+				<source>Activate</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive.description">
+				<source>Should the calendar open its doors yet?</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

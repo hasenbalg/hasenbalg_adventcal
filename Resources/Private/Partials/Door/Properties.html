@@ -2,14 +2,15 @@
       xmlns:acal="HasenbalgOrg\HasenbalgAdventcal\ViewHelpers"
 data-namespace-typo3-fluid="true"
 >
-
 <div class="door {f:if(condition: '{door.isbigger}', then: 'big-door', else: '')}" data-daynum="{door.daynum}" style="top:{door.posy}%; left:{door.posx}%;">
 	<div class="leaf {colorClass}">
 		{door.daynum}
 	</div>
-	<div class="ce">
-		<acal:renderContent uid="{door.contentElement.uid}"/>
-	</div>
+	<f:if condition="{settings.isactive}">
+		<div class="ce">
+			<acal:renderContent uid="{door.contentElement.uid}"/>
+		</div>
+	</f:if>
 </div>
 
 </html>

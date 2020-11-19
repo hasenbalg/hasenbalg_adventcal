@@ -10,9 +10,12 @@ call_user_func(
             'Piadventcal',
             'Advent Calendar'
         );
+        # register hook to clear the cache after saving the calendar
+        // $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['ClearCacheOnSaveHook'][] = 'HasenbalgOrg\\HasenbalgAdventcal\\Hooks\\ClearCacheOnSaveHook';
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['hasenbalgadventcal'] = 'HasenbalgOrg\\HasenbalgAdventcal\\Hooks\\ClearCacheOnSaveHook';
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['hasenbalgadventcal'] = 'HasenbalgOrg\\HasenbalgAdventcal\\Hooks\\ClearCacheOnSaveHook';
 
-       
-
+        
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('hasenbalg_adventcal', 'Configuration/TypoScript', 'Advent Calendar');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_hasenbalgadventcal_domain_model_door', 'EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_csh_tx_hasenbalgadventcal_domain_model_door.xlf');

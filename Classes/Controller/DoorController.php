@@ -25,25 +25,4 @@ class DoorController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     protected $doorRepository = null;
 
-    /**
-     * action list
-     *
-     * @return void
-     */
-    public function listAction()
-    {
-        $doors = $this->doorRepository->findAll();
-        $this->view->assign('doors', $doors);
-    }
-
-    /**
-     * action show
-     *
-     * @param \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\Door $door
-     * @return void
-     */
-    public function showAction(\HasenbalgOrg\HasenbalgAdventcal\Domain\Model\Door $door)
-    {
-        $this->view->assign('door', $door);
-    }
 }

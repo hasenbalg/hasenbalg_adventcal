@@ -1,5 +1,4 @@
 <?php
-
 namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
 
 /***
@@ -18,8 +17,6 @@ namespace HasenbalgOrg\HasenbalgAdventcal\Domain\Model;
  */
 class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
-
     /**
      * make bigger door
      *
@@ -28,7 +25,7 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $isbigger = false;
 
     /**
-     * mumber day of the month
+     * The day of the door.
      *
      * @var int
      * @validate NotEmpty, \HasenbalgOrg\HasenbalgAdventcal\Validation\Validator\DateUniqueValidator
@@ -36,7 +33,7 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $daynum = null;
 
     /**
-     * vertical position in %
+     * horizontal position in %
      *
      * @var float
      * @validate NotEmpty
@@ -44,7 +41,7 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $posx = 0.0;
 
     /**
-     * horizontal position in %
+     * vertical position in %
      *
      * @var float
      * @validate NotEmpty
@@ -52,6 +49,8 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $posy = 0.0;
 
     /**
+     * Content Element
+     *
      * @var \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
@@ -59,11 +58,31 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $contentElement = null;
 
+    /**
+     * Returns the isbigger
+     *
+     * @return bool isbigger
+     */
+    public function getIsbigger()
+    {
+        return $this->isbigger;
+    }
+
+    /**
+     * Sets the isbigger
+     *
+     * @param bool $isbigger
+     * @return void
+     */
+    public function setIsbigger(bool $isbigger)
+    {
+        $this->isbigger = $isbigger;
+    }
 
     /**
      * Returns the daynum
      *
-     * @return int $daynum
+     * @return int daynum
      */
     public function getDaynum()
     {
@@ -82,51 +101,9 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the isbigger
-     *
-     * @return bool $isbigger
-     */
-    public function getIsbigger()
-    {
-        return $this->isbigger;
-    }
-
-    /**
-     * Sets the isbigger
-     *
-     * @param bool $isbigger
-     * @return void
-     */
-    public function setisbigger(bool $isbigger)
-    {
-        $this->isbigger = $isbigger;
-    }
-
-    /**
-     * Returns the contentElement
-     *
-     * @return \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent $contentElement
-     */
-    public function getContentElement()
-    {
-        return $this->contentElement;
-    }
-
-    /**
-     * Sets the contentElement
-     *
-     * @param \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent $contentElement
-     * @return void
-     */
-    public function setContentElement(\HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent $contentElement)
-    {
-        $this->contentElement = $contentElement;
-    }
-
-    /**
      * Returns the posx
      *
-     * @return float $posx
+     * @return float posx
      */
     public function getPosx()
     {
@@ -147,7 +124,7 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the posy
      *
-     * @return float $posy
+     * @return float posy
      */
     public function getPosy()
     {
@@ -163,5 +140,26 @@ class Door extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPosy($posy)
     {
         $this->posy = $posy;
+    }
+
+    /**
+     * Returns the contentElement
+     *
+     * @return \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent contentElement
+     */
+    public function getContentElement()
+    {
+        return $this->contentElement;
+    }
+
+    /**
+     * Sets the contentElement
+     *
+     * @param \HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent $contentElement
+     * @return void
+     */
+    public function setContentElement(\HasenbalgOrg\HasenbalgAdventcal\Domain\Model\TtContent $contentElement)
+    {
+        $this->contentElement = $contentElement;
     }
 }

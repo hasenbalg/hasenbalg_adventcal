@@ -21,7 +21,7 @@
 }
 
 .tx-hasenbalg-adventcal .overlay .door {
-    position: relative;
+    position: absolute;
     width: max-content;
 }
 

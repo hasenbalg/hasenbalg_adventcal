@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-14T09:35:27Z" product-name="hasenbalg_adventcal">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-15T17:52:03Z" product-name="hasenbalg_adventcal">
 		<header/>
 		<body>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door">
 				<source>Door</source>
 			</trans-unit>
-			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.date">
-				<source>Date</source>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.isbigger">
+				<source>Double size</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.daynum">
+				<source>Day of the month</source>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.posx">
 				<source>Posx</source>
@@ -20,6 +23,9 @@
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar">
 				<source>Calendar</source>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.title">
+				<source>Title</source>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.background">
 				<source>Background</source>

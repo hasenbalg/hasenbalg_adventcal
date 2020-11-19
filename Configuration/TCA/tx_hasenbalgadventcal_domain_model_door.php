@@ -6,24 +6,20 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'sortby' => 'sorting',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
-        'delete' => 'deleted',
         'enablecolumns' => [
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
         ],
-        'searchFields' => 'daynum,isbigger,posx,posy,content_element',
-        'iconfile' => 'EXT:hasenbalg_adventcal/Resources/Public/Icons/tx_hasenbalgadventcal_domain_model_door.gif'
+        'searchFields' => 'isbigger,daynum,posx,posy,content_element',
+        'iconfile' => 'EXT:hasenbalg_adventcal/Resources/Public/Icons/tx_hasenbalgadventcal_domain_model_door.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, daynum, isbigger, posx, posy, content_element',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, isbigger, daynum, posx, posy, content_element',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, daynum, isbigger, posx, posy, content_element, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, isbigger, daynum, posx, posy, content_element'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -71,39 +67,21 @@ return [
                 'max' => 255,
             ],
         ],
-        'starttime' => [
-            'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+
+        'isbigger' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalgadventcal_domain_model_door.isbigger',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-            ],
-        ],
-        'endtime' => [
-            'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
+                'type' => 'check',
+                'items' => [
+                    '1' => [
+                        '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                    ]
                 ],
-            ],
+                'default' => 0,
+            ]
+            
         ],
-
-
         'daynum' => [
             'exclude' => false,
             'label' => 'LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalgadventcal_domain_model_door.date',
@@ -142,33 +120,46 @@ return [
                 'default' => null,
             ],
         ],
-        'isbigger' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalgadventcal_domain_model_door.isbigger',
-            'config' => [
-                'type' => 'check',
-                'items' => [
-                    [ 'LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalgadventcal_domain_model_door.isbigger.enabled', '1' ],
-                ],
-            ]
-        ],
         'posx' => [
-            'exclude' => true,
+            'exclude' => false,
             'label' => 'LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalgadventcal_domain_model_door.posx',
+            // 'config' => [
+            //     'type' => 'input',
+            //     'size' => 30,
+            //     'eval' => 'double2,required'
+            // ]
             'config' => [
                 'type' => 'input',
-                'size' => 30,
-                'eval' => 'double2,required'
-            ]
+                'size' => 10,
+                'eval' => 'double2,required',
+                'range' => [
+                    'lower' => 0.0,
+                    'upper' => 90.0,
+                ],
+                'default' => 50.00,
+                'slider' => [
+                    'step' => 0.001,
+                    'width' => 500,
+                ],
+            ],
         ],
         'posy' => [
-            'exclude' => true,
+            'exclude' => false,
             'label' => 'LLL:EXT:hasenbalg_adventcal/Resources/Private/Language/locallang_db.xlf:tx_hasenbalgadventcal_domain_model_door.posy',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
-                'eval' => 'double2,required'
-            ]
+                'size' => 10,
+                'eval' => 'double2,required',
+                'range' => [
+                    'lower' => 0.0,
+                    'upper' => 90.0,
+                ],
+                'default' => 50.00,
+                'slider' => [
+                    'step' => 0.001,
+                    'width' => 500,
+                ],
+            ],
         ],
         'content_element' => [
             'exclude' => true,
@@ -188,7 +179,7 @@ return [
                 'eval' => 'required',
             ],
         ],
-
+    
         'calendar' => [
             'config' => [
                 'type' => 'passthrough',

@@ -27,25 +27,49 @@ class DoorTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getDateReturnsInitialValueForDateTime()
+    public function getIsbiggerReturnsInitialValueForBool()
     {
-        self::assertEquals(
-            null,
-            $this->subject->getDate()
+        self::assertSame(
+            false,
+            $this->subject->getIsbigger()
         );
     }
 
     /**
      * @test
      */
-    public function setDateForDateTimeSetsDate()
+    public function setIsbiggerForBoolSetsIsbigger()
     {
-        $dateTimeFixture = new \DateTime();
-        $this->subject->setDate($dateTimeFixture);
+        $this->subject->setIsbigger(true);
 
         self::assertAttributeEquals(
-            $dateTimeFixture,
-            'date',
+            true,
+            'isbigger',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getDaynumReturnsInitialValueForInt()
+    {
+        self::assertSame(
+            0,
+            $this->subject->getDaynum()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setDaynumForIntSetsDaynum()
+    {
+        $this->subject->setDaynum(12);
+
+        self::assertAttributeEquals(
+            12,
+            'daynum',
             $this->subject
         );
     }
@@ -107,14 +131,14 @@ class DoorTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getContentElementReturnsInitialValueFor()
+    public function getContentElementReturnsInitialValueForTtContent()
     {
     }
 
     /**
      * @test
      */
-    public function setContentElementForSetsContentElement()
+    public function setContentElementForTtContentSetsContentElement()
     {
     }
 }

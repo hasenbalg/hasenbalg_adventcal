@@ -64,7 +64,14 @@
 				<source>Shows a 24 door advent calendar</source>
 				<target>Zeigt 24 Türchen auf einem Hintergrundbild. Die Türchen haben Inhaltselemente, die angezeigt werden, wenn man drauf klickt.</target>
 			</trans-unit>
-			
+			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive">
+				<source>Activate</source>
+				<target>Aktivieren</target>
+			</trans-unit>
+			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive.description">
+				<source>Should the calendar open its doors yet?</source>
+				<target>Sollen die Türchen schon zu öffnen sein?</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

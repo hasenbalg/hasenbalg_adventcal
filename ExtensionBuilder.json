@@ -10,7 +10,7 @@
             "name": "New Model Object",
             "value": {
                 "actionGroup": {
-                    "_default0_list": true,
+                    "_default0_list": false,
                     "_default1_show": true,
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
@@ -19,16 +19,16 @@
                 },
                 "name": "Door",
                 "objectsettings": {
-                    "addDeletedField": true,
+                    "addDeletedField": false,
                     "addHiddenField": false,
-                    "addStarttimeEndtimeFields": true,
+                    "addStarttimeEndtimeFields": false,
                     "aggregateRoot": true,
                     "categorizable": false,
                     "description": "",
                     "mapToTable": "",
                     "parentClass": "",
                     "skipTypeConfiguration": false,
-                    "sorting": true,
+                    "sorting": false,
                     "type": "Entity",
                     "uid": "1141425370833"
                 },
@@ -37,19 +37,30 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "isbigger",
+                            "propertyType": "Boolean",
+                            "uid": "1290296674764"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
                             "propertyDescription": "The day of the door.",
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": true,
                             "propertyIsRequired": true,
-                            "propertyName": "date",
-                            "propertyType": "NativeDate",
+                            "propertyName": "daynum",
+                            "propertyType": "Integer",
                             "uid": "1393063108499"
                         },
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "vertical position in %",
-                            "propertyIsExcludeField": true,
+                            "propertyDescription": "horizontal position in %",
+                            "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": true,
                             "propertyIsRequired": true,
                             "propertyName": "posx",
@@ -59,8 +70,8 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
-                            "propertyDescription": "horizontal position in %",
-                            "propertyIsExcludeField": true,
+                            "propertyDescription": "vertical position in %",
+                            "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": true,
                             "propertyIsRequired": true,
                             "propertyName": "posy",
@@ -72,10 +83,10 @@
                 "relationGroup": {
                     "relations": [
                         {
-                            "foreignRelationClass": "\\TYPO3\\CMS\\Extbase\\DomainObject\\AbstractEntity",
+                            "foreignRelationClass": "\\HasenbalgOrg\\HasenbalgAdventcal\\Domain\\Model\\TtContent",
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
-                            "relationDescription": "",
+                            "relationDescription": "Content Element",
                             "relationName": "contentElement",
                             "relationType": "zeroToOne",
                             "relationWire": "",
@@ -97,17 +108,19 @@
             "value": {
                 "actionGroup": {
                     "_default0_list": false,
-                    "_default1_show": true,
-                    "_default2_new_create": true,
-                    "_default3_edit_update": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
                     "_default4_delete": false,
-                    "customActions": []
+                    "customActions": [
+                        "index"
+                    ]
                 },
                 "name": "Calendar",
                 "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
+                    "addDeletedField": false,
+                    "addHiddenField": false,
+                    "addStarttimeEndtimeFields": false,
                     "aggregateRoot": true,
                     "categorizable": false,
                     "description": "Calendar",
@@ -123,9 +136,20 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "1071897979259"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
                             "propertyDescription": "Background image",
                             "propertyIsExcludeField": false,
-                            "propertyIsL10nModeExclude": false,
+                            "propertyIsL10nModeExclude": true,
                             "propertyIsRequired": true,
                             "propertyName": "background",
                             "propertyType": "Image",
@@ -152,18 +176,7 @@
         }
     ],
     "properties": {
-        "backendModules": [
-            {
-                "actions": {
-                    "controllerActionCombinations": ""
-                },
-                "description": "Manage the advent calendar",
-                "key": "modadventcal",
-                "mainModule": "web",
-                "name": "Advent Calendar",
-                "tabLabel": "Advent Cal"
-            }
-        ],
+        "backendModules": [],
         "description": "Herzlichen Glueckwunsch zu Weihnachten Kai",
         "emConf": {
             "category": "plugin",
@@ -179,7 +192,7 @@
         },
         "extensionKey": "hasenbalg_adventcal",
         "name": "Advent Calendar",
-        "originalExtensionKey": "hasenbalg_adventcal",
+        "originalExtensionKey": "_hasenbalg_adventcal.bak",
         "originalVendorName": "HasenbalgOrg",
         "persons": [
             {
@@ -192,7 +205,7 @@
         "plugins": [
             {
                 "actions": {
-                    "controllerActionCombinations": "",
+                    "controllerActionCombinations": "Calendar => index",
                     "noncacheableActions": "",
                     "switchableActions": ""
                 },
@@ -218,7 +231,7 @@
         }
     ],
     "log": {
-        "last_modified": "2020-11-14 09:35",
+        "last_modified": "2020-11-15 05:52",
         "extension_builder_version": "8.10.3",
         "be_user": " (1)"
     }

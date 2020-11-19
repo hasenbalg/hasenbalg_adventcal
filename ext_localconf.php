@@ -9,13 +9,12 @@ call_user_func(
             'HasenbalgOrg.HasenbalgAdventcal',
             'Piadventcal',
             [
-                'Calendar' => 'index, show, new, create, edit, update',
-                'Door' => 'list, show',
+                'Calendar' => 'index'
             ],
             // non-cacheable actions
             [
                 'Door' => '',
-                'Calendar' => 'create, update'
+                'Calendar' => ''
             ]
         );
 
