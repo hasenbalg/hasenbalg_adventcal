@@ -6,6 +6,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
+        'sortby' => 'sorting',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -170,7 +171,7 @@ return [
                 'minitems' => 1,
                 'maxitems' => 1,
                 'appearance' => [
-                    'collapseAll' => 0,
+                    'collapseAll' => 1,
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,

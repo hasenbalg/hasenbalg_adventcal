@@ -25,7 +25,6 @@ class CalendarController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     protected $calendarRepository = null;
 
- 
     /**
      * action index
      *

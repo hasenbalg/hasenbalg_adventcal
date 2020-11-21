@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-15T17:52:03Z" product-name="hasenbalg_adventcal">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-11-21T17:11:59Z" product-name="hasenbalg_adventcal">
 		<header/>
 		<body>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door">
@@ -39,7 +39,7 @@
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.description">
 				<source>Shows a 24 door advent calendar</source>
 			</trans-unit>
-			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive">
+				<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive">
 				<source>Activate</source>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalg_adventcal_piadventcal.iscactive.description">

@@ -13,7 +13,7 @@ return [
         'enablecolumns' => [
         ],
         'searchFields' => 'title,background,doors',
-        'iconfile' => 'EXT:hasenbalg_adventcal/Resources/Public/Icons/tx_hasenbalgadventcal_domain_model_calendar.svg'
+        'iconfile' => 'EXT:hasenbalg_adventcal/Resources/Public/Icons/tx_hasenbalgadventcal_domain_model_calendar.gif'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, title, background, doors',
@@ -133,18 +133,20 @@ return [
                 'type' => 'inline',
                 'foreign_table' => 'tx_hasenbalgadventcal_domain_model_door',
                 'foreign_field' => 'calendar',
+                'foreign_sortby' => 'sorting',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 0, // needs to be open, gets closed by js
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
+                    'useSortable' => 1,
                     'showAllLocalizationLink' => 1
                 ],
             ],
 
         ],
-       
-    
+
+        
     ],
 ];

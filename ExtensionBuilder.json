@@ -28,7 +28,7 @@
                     "mapToTable": "",
                     "parentClass": "",
                     "skipTypeConfiguration": false,
-                    "sorting": false,
+                    "sorting": true,
                     "type": "Entity",
                     "uid": "1141425370833"
                 },
@@ -192,7 +192,7 @@
         },
         "extensionKey": "hasenbalg_adventcal",
         "name": "Advent Calendar",
-        "originalExtensionKey": "_hasenbalg_adventcal.bak",
+        "originalExtensionKey": "hasenbalg_adventcal",
         "originalVendorName": "HasenbalgOrg",
         "persons": [
             {
@@ -231,7 +231,7 @@
         }
     ],
     "log": {
-        "last_modified": "2020-11-15 05:52",
+        "last_modified": "2020-11-21 05:11",
         "extension_builder_version": "8.10.3",
         "be_user": " (1)"
     }

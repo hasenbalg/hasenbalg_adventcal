@@ -71,7 +71,7 @@ class ClearCacheOnSaveHook
                 ->flushCaches();
             $message = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
                 \TYPO3\CMS\Core\Messaging\FlashMessage::class,
-                'Flushed Caches, please reload the frontend',
+                'Flushed caches, please reload the most popular sites in the frontend to increase the loading speed for visitors after you are done.',
                 'Cache cleared!', // [optional] the header
                 \TYPO3\CMS\Core\Messaging\FlashMessage::INFO, // [optional] the severity defaults to \TYPO3\CMS\Core\Messaging\FlashMessage::OK
                 true // [optional] whether the message should be stored in the session or only in the \TYPO3\CMS\Core\Messaging\FlashMessageQueue object (default is false)

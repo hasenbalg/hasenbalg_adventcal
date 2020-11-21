@@ -4,28 +4,81 @@ define([], function (m) {
         form,
         doorPositionInputGroups = {},
         preview,
-        backgroundImageThumbnail;
+        backgroundImageThumbnail,
+        stop = false,
+        previewContext,
+        doors = {};
 
-    function updatePreview() {
-        
+    function renderPreview() {
+        previewContext.clearRect(0, 0, preview.width, preview.height);
+        previewContext.drawImage(backgroundImageThumbnail, 0, 0, preview.width, preview.height);
+
         // set door values
-        for (const [uid, _] of Object.entries(doorPositionInputGroups)) {
-            const door = document.getElementById('tx_hasenbalgadventcal_domain_model_door-' + uid);
-            if(door != null){
-                door.style.left = doorPositionInputGroups[uid][0].value + '%';
-                door.style.top = doorPositionInputGroups[uid][1].value + '%';
+        for (const [uid, _] of Object.entries(doors)) {
+
+            previewContext.save();
+            previewContext.translate(doors[uid].x, doors[uid].y);
+            previewContext.beginPath();
+            if (doors[uid].isbigger) {
+                previewContext.rect(0, 0, 60, 60);
+            } else {
+                previewContext.rect(0, 0, 30, 30);
             }
+            previewContext.fillStyle = 'white';
+            previewContext.fill();
+            previewContext.lineWidth = 1;
+            previewContext.strokeStyle = 'black';
+            previewContext.stroke();
+            previewContext.restore();
+
+            previewContext.save();
+            previewContext.translate(doors[uid].x, doors[uid].y);
+            previewContext.translate(5, 12);
+            //   context.font = 'italic 40pt Calibri';
+            // previewContext.textAlign = "left";
+            previewContext.fillStyle = 'black';
+            previewContext.fillText(doors[uid].daynum, 0, 0);
+            previewContext.restore();
+
+            // previewContext.save();
+            // previewContext.translate(doors[uid].x, doors[uid].y);
+            // previewContext.rect(0,0, 30, 30);
+            // previewContext.fillStyle = "#8ED6FF";
+            // previewContext.fill();
+            // previewContext.lineWidth = 1;
+            // previewContext.strokeStyle = "black";
+            // previewContext.stroke();
+            // previewContext.restore();
+
         }
         // console.log('loop');
-        // loop update the preview
-        window.requestAnimationFrame(updatePreview);
+        if (!stop) {
+            window.requestAnimationFrame(renderPreview);
+        }
+    }
+
+    function updatePreview() {
+
+        doors = {};
+        // set door values
+        for (const [uid, _] of Object.entries(doorPositionInputGroups)) {
+            doors[uid] = {
+                daynum: doorPositionInputGroups[uid].daynumInput.value,
+                isbigger: doorPositionInputGroups[uid].isbiggerInput.value == 1,
+                x: doorPositionInputGroups[uid].inputs[0].value * preview.width / 100,
+                y: doorPositionInputGroups[uid].inputs[1].value * preview.height / 100
+            };
+
+        }
     }
 
     function init() {
         // close all door panels
-        const doorPanels = iframe.querySelectorAll('.panel-visible .panel-heading');
+        const doorPanels = iframe.querySelectorAll('.panel-visible>.panel-heading');
         Array.from(doorPanels).forEach(function (doorPanel) {
-            doorPanel.click();
+            setTimeout(() => {
+                doorPanel.click();
+            }, 500);
         });
 
         // add listeners to inputs
@@ -38,43 +91,56 @@ define([], function (m) {
                 // 'data[tx_hasenbalgadventcal_domain_model_door][9][posy]'
                 const doorUid = input.getAttribute('data-formengine-input-name').split('][')[1];
                 if (doorPositionInputGroups[doorUid] == null) {
-                    doorPositionInputGroups[doorUid] = [input]
+                    doorPositionInputGroups[doorUid] = {
+                        daynumInput: iframe.querySelector('[name="data[tx_hasenbalgadventcal_domain_model_door][' + doorUid + '][daynum]"]'),
+                        isbiggerInput: iframe.querySelector('[name="data[tx_hasenbalgadventcal_domain_model_door][' + doorUid + '][isbigger]"]'),
+                        inputs: [input]
+                    };
+
                 } else {
-                    doorPositionInputGroups[doorUid].push(input);
+                    doorPositionInputGroups[doorUid].inputs.push(input);
                 }
             }
         });
-        
+        console.log(doorPositionInputGroups);
+
         // get image ratio
         backgroundImageThumbnail = iframe.querySelector('img.thumbnail');
-        const backgroundImageRatio = backgroundImageThumbnail.height/backgroundImageThumbnail.width;
+        const backgroundImageRatio = backgroundImageThumbnail.height / backgroundImageThumbnail.width;
 
         // paint preview
-        preview = document.createElement('div');
+        preview = document.createElement('canvas');
         preview.className = 'tx_hasenbalgadventcal_domain_model_door_preview';
-        preview.style.width = BACKGROUND_IMGAE_WIDTH + 'px';
-        preview.style.height = (300 * backgroundImageRatio) + 'px';
+        preview.width = BACKGROUND_IMGAE_WIDTH * window.devicePixelRatio;
+        preview.height = (300 * backgroundImageRatio) * window.devicePixelRatio;
         preview.style.backgroundImage = 'url(\'' + backgroundImageThumbnail.src + '\')';
 
-        //add doors
-        for (const [uid, _] of Object.entries(doorPositionInputGroups)) {
-            const door = document.createElement('div');
-            door.className = 'tx_hasenbalgadventcal_domain_model_door';
-            door.id = 'tx_hasenbalgadventcal_domain_model_door-' + uid;
-            preview.append(door);
-        }
+
         //add to dom
         document.querySelector('#typo3-pagetree-tree ul').appendChild(preview);
+        previewContext = preview.getContext('2d');
 
 
         // start updating the preview
-        window.requestAnimationFrame(updatePreview);
+        stop = false;
+        window.requestAnimationFrame(renderPreview);
+
+        //decouple update from render to make interface faster
+        setInterval(() => {
+            if (!stop) {
+                updatePreview();
+            } else {
+                console.log('end');
+                clearInterval(this);
+            }
+        }, 500);
 
     }
     // check if the right side iframe is changed
     document.getElementById('typo3-contentIframe').addEventListener('load', function () {
         iframe = this.contentWindow.document
         const tagsWithInterestingDataAttribute = iframe.querySelectorAll('[data-table="tx_hasenbalgadventcal_domain_model_calendar"]');
+
         Array.from(tagsWithInterestingDataAttribute).forEach(function (tag) {
             // this is the page where you edit the calendar
             if (tag.hasAttribute('data-field') && tag.getAttribute('data-field') == 'doors') { // form for dors must be on iframe
@@ -85,9 +151,10 @@ define([], function (m) {
         });
         // clean up, there might be a preview left
         const oldPreviews = document.querySelectorAll('.tx_hasenbalgadventcal_domain_model_door_preview');
-        Array.from(oldPreviews).forEach((op)=>{
+        Array.from(oldPreviews).forEach((op) => {
             op.remove();
         });
         doorPositionInputGroups = {};
+        stop = true;
     });
 });

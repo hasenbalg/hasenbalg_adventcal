@@ -7,6 +7,8 @@
     background-size: cover;
     bottom: 0;
     position: absolute;
+    width: 100%;
+    height: auto;
 }
 
 .tx_hasenbalgadventcal_domain_model_door_preview .tx_hasenbalgadventcal_domain_model_door {
