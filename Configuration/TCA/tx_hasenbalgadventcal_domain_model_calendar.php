@@ -85,7 +85,7 @@ return [
                 'background',
                 [
                     'appearance' => [
-                        'collapseAll' => 1,
+                        'collapseAll' => 0, // needs to be open, gets closed by js
                         'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                     ],
                     'foreign_types' => [
@@ -135,7 +135,7 @@ return [
                 'foreign_field' => 'calendar',
                 'maxitems' => 9999,
                 'appearance' => [
-                    'collapseAll' => 1,
+                    'collapseAll' => 0, // needs to be open, gets closed by js
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
@@ -144,6 +144,7 @@ return [
             ],
 
         ],
+       
     
     ],
 ];

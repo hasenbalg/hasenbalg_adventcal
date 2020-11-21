@@ -1,0 +1,18 @@
+.tx_hasenbalgadventcal_domain_model_door_preview {
+    /* pass through click events */
+    pointer-events: none;
+    background-color: teal;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    bottom: 0;
+    position: absolute;
+}
+
+.tx_hasenbalgadventcal_domain_model_door_preview .tx_hasenbalgadventcal_domain_model_door {
+    position: absolute;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}

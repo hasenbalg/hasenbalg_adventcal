@@ -22,7 +22,7 @@
 
 .tx-hasenbalg-adventcal .overlay .door {
     position: absolute;
-    width: max-content;
+    width: 2#em;
 }
 
 .tx-hasenbalg-adventcal .overlay .big-door {
@@ -85,4 +85,19 @@
 .tx-hasenbalg-adventcal .overlay .door .leaf.color3 {
     background-color: #ff527d;
     color: white;
+}
+
+.tx-hasenbalg-adventcal {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .ce-open>.well-1 {
+    background-color: white;
+}
+
+.tx-hasenbalg-adventcal .overlay .door .ce-open>*, .tx-hasenbalg-adventcal .overlay .door .ce .frame {
+    width: 500px;
+    max-width: 80%;
+    margin: 30% auto;
 }
