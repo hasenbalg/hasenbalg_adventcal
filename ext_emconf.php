@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Advent Calendar',
-    'description' => 'Herzlichen Glueckwunsch zu Weihnachten Kai',
+    'description' => 'An advent calendar for TYPO3',
     'category' => 'plugin',
     'author' => 'Frank Hasenbalg',
     'author_email' => 'frank@hasenbalg.org',
