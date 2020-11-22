@@ -51,6 +51,14 @@
 				<source>Flushed caches, the following pages are not cached: </source>
 				<target>Die folgenden Seiten haben keinen Cache: </target>
 			</trans-unit>
+			<trans-unit id="cache.full">
+				<source>Cache cleared for all pages</source>
+				<target>Cache geleert für alle Seiten</target>
+			</trans-unit>
+			<trans-unit id="cache.full.description">
+				<source>The entire cache is of the frontend is cleared. Visit the most popular pages in the frontend to increase the loading speed for other visitors after you are done.</source>
+				<target>Der komplette Frontend-Cache wurde geleert. Um die Ladezeiten für die Besucher der Seite zu verbessern, solltest du die populärsten Seiten im Frontend einmal aufrufen, nachdem  du fertig bist. So wird er Cache wieder hergestellt.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

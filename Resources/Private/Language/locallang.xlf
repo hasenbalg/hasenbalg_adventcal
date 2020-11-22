@@ -39,6 +39,12 @@
 			<trans-unit id="cache.description">
 				<source>Flushed caches, the following pages are not cached: </source>
 			</trans-unit>
+			<trans-unit id="cache.full">
+				<source>Cache cleared for all pages</source>
+			</trans-unit>
+			<trans-unit id="cache.full.description">
+				<source>The entire cache is of the frontend is cleared. Visit the most popular pages in the frontend to increase the loading speed for other visitors after you are done.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
