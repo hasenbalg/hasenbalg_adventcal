@@ -9,31 +9,31 @@
 .. _start:
 
 =============================================================
-###PROJECT_NAME### (Deutsch)
+###Advent Calendar### (Deutsch)
 =============================================================
 
 .. only:: html
 
 	:Klassifikation:
-		extension_key
+		hasenbalg_adventcal
 
 	:Version:
-		|release|
+		1.0
 
 	:Sprache:
 		de
 
 	:Beschreibung:
-		Geben Sie eine Beschreibung ein.
+		Adventskalender für TYPO3
 
 	:Schlüsselwörter:
-		komma-getrennte,Liste,von,Schlüsselwörtern
+		Adventskalender,Weihnachtskalender,Türchen
 
 	:Copyright:
-		###YEAR###
+		none
 
 	:Autor:
-		###AUTHOR###
+		Frank Hasenbalg
 
 	:E-Mail:
 		author@example.com

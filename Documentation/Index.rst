@@ -23,7 +23,7 @@ Advent Calendar
 		en
 
 	:Description:
-		Herzlichen Glueckwunsch zu Weihnachten Kai
+		An advent calendar for TYPO3
 
 	:Keywords:
 		comma,separated,list,of,keywords

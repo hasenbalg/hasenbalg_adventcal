@@ -1,7 +1,7 @@
 {
     "name": "hasenbalgorg/hasenbalg-adventcal",
     "type": "typo3-cms-extension",
-    "description": "Herzlichen Glueckwunsch zu Weihnachten Kai",
+    "description": "An advent calendar for TYPO3",
     "authors": [],
     "require": {
         "typo3/cms-core": "^8.7.1"
