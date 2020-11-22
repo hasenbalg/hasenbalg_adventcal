@@ -22,15 +22,15 @@
 
 .tx-hasenbalg-adventcal .overlay .door {
     position: absolute;
-    width: 2#em;
+    width: 2em;
 }
 
 .tx-hasenbalg-adventcal .overlay .big-door {
-    font-size: 200%;
+    font-size: 125%;
 }
 
 .tx-hasenbalg-adventcal .overlay .door .leaf {
-    padding: 1em;
+    padding: 0.1em 0.2em;
     display: inline;
     background-color: rgb(255, 187, 0);
     color: white;
@@ -101,3 +101,27 @@
     max-width: 80%;
     margin: 30% auto;
 }
+
+ @media only screen and (min-width: 360px) {
+    .tx-hasenbalg-adventcal .overlay .door .leaf {
+        padding: .5em;
+    }
+    .tx-hasenbalg-adventcal .overlay .big-door {
+        font-size: 125%;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    .tx-hasenbalg-adventcal .overlay .door .leaf {
+        padding: .75em;
+    }
+}
+@media only screen and (min-width: 720px) {
+    .tx-hasenbalg-adventcal .overlay .door .leaf {
+        padding: 1em;
+    }
+    .tx-hasenbalg-adventcal .overlay .big-door {
+        font-size: 150%;
+    }
+}
+
