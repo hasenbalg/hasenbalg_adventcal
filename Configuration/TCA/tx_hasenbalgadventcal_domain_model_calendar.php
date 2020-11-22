@@ -13,7 +13,7 @@ return [
         'enablecolumns' => [
         ],
         'searchFields' => 'title,background,doors',
-        'iconfile' => 'EXT:hasenbalg_adventcal/Resources/Public/Icons/tx_hasenbalgadventcal_domain_model_calendar.gif'
+        'iconfile' => 'EXT:hasenbalg_adventcal/Resources/Public/Icons/tx_hasenbalgadventcal_domain_model_calendar.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, title, background, doors',
