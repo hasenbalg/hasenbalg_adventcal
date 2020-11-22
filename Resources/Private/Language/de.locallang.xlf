@@ -5,39 +5,51 @@
 		<body>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door">
 				<source>Door</source>
+				<target>Türchen</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.isbigger">
 				<source>Double size</source>
+				<target>Cache geleert für spezielle Seiten</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.daynum">
 				<source>Day of the month</source>
+				<target>Cache geleert für spezielle Seiten</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.posx">
-				<source>Posx</source>
+				<source>Vertikale Position</source>
+				<target>Cache geleert für spezielle Seiten</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.posy">
 				<source>Posy</source>
+				<target>Horizontale Position</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_door.content_element">
 				<source>Content Element</source>
+				<target>Inhaltselement</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar">
 				<source>Calendar</source>
+				<target>Kalender</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.background">
 				<source>Background</source>
+				<target>Hintergrundbild</target>
 			</trans-unit>
 			<trans-unit id="tx_hasenbalgadventcal_domain_model_calendar.doors">
 				<source>Doors</source>
+				<target>Türchen</target>
 			</trans-unit>
 			<trans-unit id="cache">
 				<source>Cache cleared for some pages</source>
+				<target>Cache geleert für spezielle Seiten</target>
 			</trans-unit>
 			<trans-unit id="cache.description">
 				<source>Flushed caches, the following pages are not cached: </source>
+				<target>Die folgenden Seiten haben keinen Cache: </target>
 			</trans-unit>
 		</body>
 	</file>
