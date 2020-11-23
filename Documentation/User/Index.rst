@@ -70,6 +70,10 @@ How does it work?
 FAQ
 ---
 
+**Why is the door in the front end not opening? Im trying really hard!**
+
+Check todays date! If the current day of the month is smaller than the number on the closed door it won't open. Change the number of the door temprarily to check if the result meets your expactation and change it back or manipulate your browser time. Thats something you shouldn't forget to change back too.
+
 For customizations drop me some lines to frank[twisty A]hasenbalg[dot]org
 
 Ask me on `github<https://github.com/hasenbalg/hasenbalg_adventcal/issues>`.
